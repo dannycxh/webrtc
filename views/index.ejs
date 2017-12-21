@@ -28,6 +28,37 @@ The browser version is: <span id="browserversion"></span>
 <p>Display the video stream from <code>getUserMedia()</code> in a video element.</p>
 
 <p>The <code>MediaStream</code> object <code>stream</code> passed to the <code>getUserMedia()</code> callback is in global scope, so you can inspect it from the console.</p>
+
 <script src="/javascripts/webrtc_main.js"></script>
+
+
+
+<p>=====================================take a screenshot=================================================================================================================</p>
+<button>Take snapshot</button>
+<canvas></canvas>
+<script type="text/javascript">
+  var video = document.querySelector('video');
+  var canvas = window.canvas = document.querySelector('canvas');
+  canvas.width = 480;
+  canvas.height = 360;
+
+  var button = document.querySelector('button');
+  button.onclick = function() {
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    canvas.getContext('2d').
+            drawImage(video, 0, 0, canvas.width, canvas.height);
+  };
+</script>
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
