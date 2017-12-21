@@ -14,9 +14,9 @@ var fs = require('fs');
  */
 // 获取证书
 var options = {
-  key: fs.readFileSync('/Users/danny/Desktop/Work/scratch/webrtc/bin/ssl/server-key.pem'),
-  ca: [fs.readFileSync('/Users/danny/Desktop/Work/scratch/webrtc/bin/ssl/ca-cert.pem')],
-  cert: fs.readFileSync('/Users/danny/Desktop/Work/scratch/webrtc/bin/ssl/server-cert.pem')
+  key: fs.readFileSync('./bin/ssl/server-key.pem'),
+  ca: [fs.readFileSync('./bin/ssl/ca-cert.pem')],
+  cert: fs.readFileSync('./bin/ssl/server-cert.pem')
 };
 
 
