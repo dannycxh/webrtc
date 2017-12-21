@@ -1,0 +1,33 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Test page for adapter.js</title>
+</head>
+<body>
+<h1>Test page for adapter.js</h1>
+<script src="/js/webrtc-adapter/release/adapter.js"></script>
+
+The browser is: <span id="browser"></span>
+<br>
+The browser version is: <span id="browserversion"></span>
+<script>
+  var browser_display = document.getElementById('browser');
+  var version_display = document.getElementById('browserversion');
+  browser_display.innerHTML = adapter.browserDetails.browser;
+  version_display.innerHTML = adapter.browserDetails.version;
+</script>
+
+
+
+<video id="gum-local" autoplay playsinline></video>
+
+<div id="errorMsg"></div>
+
+<p class="warning"><strong>Warning:</strong> if you're not using headphones, pressing play will cause feedback.</p>
+
+<p>Display the video stream from <code>getUserMedia()</code> in a video element.</p>
+
+<p>The <code>MediaStream</code> object <code>stream</code> passed to the <code>getUserMedia()</code> callback is in global scope, so you can inspect it from the console.</p>
+<script src="/javascripts/webrtc_main.js"></script>
+</body>
+</html>
