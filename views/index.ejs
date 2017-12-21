@@ -29,30 +29,74 @@ The browser version is: <span id="browserversion"></span>
 
 <p>The <code>MediaStream</code> object <code>stream</code> passed to the <code>getUserMedia()</code> callback is in global scope, so you can inspect it from the console.</p>
 
-<script src="/javascripts/webrtc_main.js"></script>
+<!--<script src="/javascripts/webrtc_main.js"></script>-->
 
 
+<!--//done -->
+<!--<p>=====================================take a screenshot=================================================================================================================</p>-->
+<!--<button>Take snapshot</button>-->
+<!--<canvas></canvas>-->
+<!--<script type="text/javascript">-->
+  <!--var video = document.querySelector('video');-->
+  <!--var canvas = window.canvas = document.querySelector('canvas');-->
+  <!--canvas.width = 480;-->
+  <!--canvas.height = 360;-->
 
-<p>=====================================take a screenshot=================================================================================================================</p>
-<button>Take snapshot</button>
-<canvas></canvas>
-<script type="text/javascript">
-  var video = document.querySelector('video');
-  var canvas = window.canvas = document.querySelector('canvas');
-  canvas.width = 480;
-  canvas.height = 360;
+  <!--var button = document.querySelector('button');-->
+  <!--button.onclick = function() {-->
+    <!--canvas.width = video.videoWidth;-->
+    <!--canvas.height = video.videoHeight;-->
+    <!--canvas.getContext('2d').-->
+            <!--drawImage(video, 0, 0, canvas.width, canvas.height);-->
+  <!--};-->
+<!--</script>-->
 
-  var button = document.querySelector('button');
-  button.onclick = function() {
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-    canvas.getContext('2d').
-            drawImage(video, 0, 0, canvas.width, canvas.height);
-  };
-</script>
+<!--//done -->
+<!--<p>=====================================video to video=================================================================================================================</p>-->
+<!--<video id="leftVideo" controls muted>-->
+  <!--&lt;!&ndash; NB CORS: https://bugzilla.mozilla.org/show_bug.cgi?id=1177793 &ndash;&gt;-->
+  <!--<source src="/images/chrome.webm" type="video/webm" />-->
+  <!--<p>This browser does not support the video element.</p>-->
+<!--</video>-->
 
+<!--<video id="rightVideo" autoplay controls></video>-->
 
+<!--<script type="text/javascript">-->
 
+  <!--var leftVideo = document.getElementById('leftVideo');-->
+  <!--var rightVideo = document.getElementById('rightVideo');-->
+
+  <!--var stream;-->
+
+  <!--function maybeCreateStream() {-->
+    <!--if (stream) {-->
+      <!--return;-->
+    <!--}-->
+    <!--if (leftVideo.captureStream) {-->
+      <!--stream = leftVideo.captureStream();-->
+      <!--rightVideo.srcObject = stream;-->
+      <!--console.log('Captured stream from leftVideo with captureStream',-->
+              <!--stream);-->
+    <!--} else if (leftVideo.mozCaptureStream) {-->
+      <!--stream = leftVideo.mozCaptureStream();-->
+      <!--rightVideo.srcObject = stream;-->
+      <!--console.log('Captured stream from leftVideo with mozCaptureStream()',-->
+              <!--stream);-->
+    <!--} else {-->
+      <!--console.log('captureStream() not supported');-->
+    <!--}-->
+  <!--}-->
+
+  <!--// Video tag capture must be set up after video tracks are loaded.-->
+  <!--leftVideo.oncanplay = maybeCreateStream;-->
+  <!--if (leftVideo.readyState >= 3) {  // HAVE_FUTURE_DATA-->
+    <!--// Video is already ready to play, call maybeCreateStream in case oncanplay-->
+    <!--// fired before we registered the event handler.-->
+    <!--maybeCreateStream();-->
+  <!--}-->
+
+  <!--leftVideo.play();-->
+<!--</script>-->
 
 
 
