@@ -14,3 +14,4 @@ bower_components/*
 node_modules/*
 
 *DS_Store*
+.idea/libraries/webrtc_node_modules.xml

@@ -359,21 +359,20 @@ The browser version is: <span id="browserversion"></span>
     // immediately ask for camera access
     autoRequestMedia: true
 
-
-//    string url - required url for signaling server. Defaults to signaling server URL which can be used for development. You must use your own signaling server for production.
-//    object socketio - optional object to be passed as options to the signaling server connection.
-//    Connection connection - optional connection object for signaling. See Connection below. Defaults to a new SocketIoConnection
-//     bool debug - optional flag to set the instance to debug mode
-//    [string|DomElement] localVideoEl - ID or Element to contain the local video element
-//    [string|DomElement] remoteVideosEl - ID or Element to contain the remote video elements
-//     bool autoRequestMedia - optional(=false) option to automatically request user media. Use true to request automatically, or false to request media later with startLocalVideo
-//     bool enableDataChannels optional(=true) option to enable/disable data channels (used for volume levels or direct messaging)
-//     bool autoRemoveVideos - optional(=true) option to automatically remove video elements when streams are stopped.
-//     bool adjustPeerVolume - optional(=false) option to reduce peer volume when the local participant is speaking
-//     number peerVolumeWhenSpeaking - optional(=.0.25) value used in conjunction with adjustPeerVolume. Uses values between 0 and 1.
-//     object media - media options to be passed to getUserMedia. Defaults to { video: true, audio: true }. Valid configurations described on MDN with official spec at w3c.
-//     object receiveMedia - optional RTCPeerConnection options. Defaults to { offerToReceiveAudio: 1, offerToReceiveVideo: 1 }.
-//     object localVideo - optional options for attaching the local video stream to the page. Defaults to
+//    string url                        - required url for signaling server. Defaults to signaling server URL which can be used for development. You must use your own signaling server for production.
+//    object socketio                   - optional object to be passed as options to the signaling server connection.
+//    Connection connection             - optional connection object for signaling. See Connection below. Defaults to a new SocketIoConnection
+//     bool debug                       - optional flag to set the instance to debug mode
+//    [string|DomElement] localVideoEl  - ID or Element to contain the local video element
+//    [string|DomElement] remoteVideosEl- ID or Element to contain the remote video elements
+//     bool autoRequestMedia            - optional(=false) option to automatically request user media. Use true to request automatically, or false to request media later with startLocalVideo
+//     bool enableDataChannels          - optional(=true) option to enable/disable data channels (used for volume levels or direct messaging)
+//     bool autoRemoveVideos            - optional(=true) option to automatically remove video elements when streams are stopped.
+//     bool adjustPeerVolume            - optional(=false) option to reduce peer volume when the local participant is speaking
+//     number peerVolumeWhenSpeaking    - optional(=.0.25) value used in conjunction with adjustPeerVolume. Uses values between 0 and 1.
+//     object media                     - media options to be passed to getUserMedia. Defaults to { video: true, audio: true }. Valid configurations described on MDN with official spec at w3c.
+//     object receiveMedia              - optional RTCPeerConnection options. Defaults to { offerToReceiveAudio: 1, offerToReceiveVideo: 1 }.
+//     object localVideo                - optional options for attaching the local video stream to the page. Defaults to
   });
 
   // we have to wait until it's ready
